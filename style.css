@@ -7,11 +7,13 @@ body {
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: rgb(184, 175, 160);
+    background-color: #e9e9e9;
+    margin: 0;
 }
 
 h1 {
     align-self: center;
+    color: #fb5165;
 }
 
 .container {
@@ -40,4 +42,13 @@ h1 {
 
 .active {
     background-color: lightblue;
+}
+
+button {
+    font-size: large;
+    font-weight: bold;
+    color: #655745;
+    border: 1px solid rgb(97, 97, 121);
+    border-radius: 10px;
+    background-color: rgb(253, 247, 230);
 }
