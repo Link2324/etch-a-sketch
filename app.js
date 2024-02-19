@@ -5,7 +5,7 @@ const canvas = document.querySelector('#canvas');
 // Create (size x size) grid of div in canvas container
 function createGrid(size = 16) {
 
-    if (size < 1 || size > 100) {
+    if (size < 1 || size > 100 || size === NaN) {
         alert("Size should be in range of [1, 100]");
         return;
     }
@@ -17,7 +17,8 @@ function createGrid(size = 16) {
         const row = document.createElement('div');
         for (let j = 0; j < size; j++) {
             const div = document.createElement('div');
-            div.style.cssText = `width: ${gridElementSize}px; 
+            div.style.cssText = `border: 1px solid black;
+                                 width: ${gridElementSize}px; 
                                  height: ${gridElementSize}px; flex: 0 0 1;`;
 
             div.setAttribute('id', 'grid-element');
@@ -26,8 +27,6 @@ function createGrid(size = 16) {
         canvas.appendChild(row);
     }
 }
-
-createGrid(16);
 
 let isMousedown = false;
 canvas.addEventListener('mousedown', e => {
@@ -72,3 +71,12 @@ tools.addEventListener('click', e => {
             break;
     }
 });
+
+createGrid(16);
+
+const size = document.querySelector('#size');
+
+size.onclick = function () {
+    canvas.textContent = '';
+    createGrid(Number(prompt("Enter number in range [1, 100]")));
+}
