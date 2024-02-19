@@ -29,3 +29,20 @@ function createGrid(size = 16) {
 }
 
 createGrid(16);
+
+let isMousedown = false;
+canvas.addEventListener('mousedown', e => {
+    e.preventDefault();
+    isMousedown = true;
+    e.target.style.backgroundColor = 'black'; // Start drawing as soon as the mouse is pressed
+});
+
+canvas.addEventListener('mouseover', e => {
+    if (isMousedown) {
+        e.target.style.backgroundColor = 'black'; // Only draw when the mouse button is down
+    }
+});
+
+canvas.addEventListener('mouseup', e => {
+    isMousedown = false;
+});
