@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: rgb(184, 175, 160);
+}
+
+h1 {
+    align-self: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1vmin;
+}
+
+#canvas {
+    background-color: white;
+    display: flex;
+    flex: 0 0 1;
+    width: 80vmin;
+    height: 80vmin;
+}
+
+#tools {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5vmin;
+}
