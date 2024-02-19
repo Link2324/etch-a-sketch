@@ -19,8 +19,9 @@ function createGrid(size = 16) {
             const div = document.createElement('div');
             div.style.cssText = `border: 1px solid lightgrey; 
                                  width: ${gridElementSize}px; 
-                                 height: ${gridElementSize}px; flex: 0 0 1;
-                                 `;
+                                 height: ${gridElementSize}px; flex: 0 0 1;`;
+            
+            div.setAttribute('id', 'grid-element');
             row.appendChild(div);
         }
         canvas.appendChild(row);
@@ -28,13 +29,3 @@ function createGrid(size = 16) {
 }
 
 createGrid(16);
-
-canvas.addEventListener('mouseover', e => {
-    const target = e.target;
-    target.style['background-color'] = 'lightblue';
-})
-
-canvas.addEventListener('mouseout', e => {
-    const target = e.target;
-    target.style['background-color'] = 'white';
-})
