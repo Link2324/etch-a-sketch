@@ -37,3 +37,7 @@ h1 {
 #grid-element:hover {
     background-color: lightblue;
 }
+
+.active {
+    background-color: lightblue;
+}

@@ -17,10 +17,9 @@ function createGrid(size = 16) {
         const row = document.createElement('div');
         for (let j = 0; j < size; j++) {
             const div = document.createElement('div');
-            div.style.cssText = `border: 1px solid lightgrey; 
-                                 width: ${gridElementSize}px; 
+            div.style.cssText = `width: ${gridElementSize}px; 
                                  height: ${gridElementSize}px; flex: 0 0 1;`;
-            
+
             div.setAttribute('id', 'grid-element');
             row.appendChild(div);
         }
@@ -45,4 +44,31 @@ canvas.addEventListener('mouseover', e => {
 
 canvas.addEventListener('mouseup', e => {
     isMousedown = false;
+});
+
+const tools = document.querySelector('#tools');
+
+let active = document.querySelector('#black');
+active.setAttribute('class', 'active');
+
+tools.addEventListener('click', e => {
+    const target = e.target;
+    active.classList.remove('active');
+
+    switch (target.id) {
+        case 'black':
+            active = document.querySelector('#black');
+            target.classList.add('active');
+            break;
+
+        case 'rainbow':
+            active = document.querySelector('#rainbow');
+            target.classList.add('active');
+            break;
+
+        case 'erase':
+            active = document.querySelector('#erase');
+            target.classList.add('active');
+            break;
+    }
 });
