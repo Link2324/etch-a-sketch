@@ -10,7 +10,7 @@ function createGrid(size = 16) {
         return;
     }
 
-    const girdElementSize = canvas.clientHeight / size;
+    const gridElementSize = canvas.clientHeight / size;
 
     for (let i = 0; i < size; i++) {
 
@@ -18,8 +18,8 @@ function createGrid(size = 16) {
         for (let j = 0; j < size; j++) {
             const div = document.createElement('div');
             div.style.cssText = `border: 1px solid lightgrey; 
-                                 width: ${girdElementSize}px; 
-                                 height: ${girdElementSize}px; flex: 0 0 1;
+                                 width: ${gridElementSize}px; 
+                                 height: ${gridElementSize}px; flex: 0 0 1;
                                  `;
             row.appendChild(div);
         }
